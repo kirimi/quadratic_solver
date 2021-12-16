@@ -4,16 +4,16 @@ const double epsilon = 1E-15;
 
 /// Функция для решения квадратного уравнения
 List<double> solve(double a, double b, double c) {
-  // a != 0
-  if (a.abs() <= epsilon) {
-    throw FormatException();
-  }
-
   if (a.isInfinite || b.isInfinite || c.isInfinite) {
     throw FormatException();
   }
 
   if (a.isNaN || b.isNaN || c.isNaN) {
+    throw FormatException();
+  }
+
+  // a != 0
+  if (a.abs() <= epsilon) {
     throw FormatException();
   }
 
