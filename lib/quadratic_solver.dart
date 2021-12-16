@@ -9,6 +9,14 @@ List<double> solve(double a, double b, double c) {
     throw FormatException();
   }
 
+  if (a.isInfinite || b.isInfinite || c.isInfinite) {
+    throw FormatException();
+  }
+
+  if (a.isNaN || b.isNaN || c.isNaN) {
+    throw FormatException();
+  }
+
   final d = b * b - 4 * a * c;
 
   // d < 0

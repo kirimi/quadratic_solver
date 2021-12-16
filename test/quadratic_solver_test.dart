@@ -40,4 +40,14 @@ void main() {
       expect(result[0], result[1]);
     },
   );
+
+  test(
+    'коэфициенты не равны double.infinity',
+    () => expect(() => solve(1, double.infinity, 1), throwsFormatException),
+  );
+
+  test(
+    'коэфициенты не равны double.nan',
+    () => expect(() => solve(1, double.nan, 1), throwsFormatException),
+  );
 }
